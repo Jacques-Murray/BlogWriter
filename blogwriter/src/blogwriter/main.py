@@ -15,8 +15,9 @@ def run():
     """
     Run the crew.
     """
+    topic = input("Enter the topic: ")
     inputs = {
-        'topic': 'AI LLMs'
+        'topic': topic.strip()
     }
     Blogwriter().crew().kickoff(inputs=inputs)
 
