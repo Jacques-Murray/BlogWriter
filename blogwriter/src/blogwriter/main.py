@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import sys
 import warnings
+from datetime import datetime
 
 from blogwriter.crew import Blogwriter
 
@@ -17,7 +18,8 @@ def run():
     """
     topic = input("Enter the topic: ")
     inputs = {
-        'topic': topic.strip()
+        'topic': topic.strip(),
+        'current_date': datetime.now().strftime("%Y-%m-%d")
     }
     Blogwriter().crew().kickoff(inputs=inputs)
 

@@ -1,17 +1,83 @@
-research_task:
+topic_research_task:
   description: >
-    Conduct a thorough research about {topic}
-    Make sure you find any interesting and relevant information given
-    the current year is 2024.
+    Conduct a through research about {topic}, utilizing the latest sources and information.
+    Make sure you find any interesting and relevant information given the current date is
+    {current_date}.
   expected_output: >
-    A list with 10 bullet points of the most relevant information about {topic}
-  agent: researcher
+    A list with 10 bullet points of the most relevant information about {topic}.
+  agent: topic_researcher
 
-reporting_task:
+topic_writing_task:
   description: >
-    Review the context you got and expand each topic into a full section for a report.
-    Make sure the report is detailed and contains any and all relevant information.
+    Write a blog post about {topic} that is engaging, informative, and easy to read.
+    Make sure to include the most relevant information and present it in a clear and
+    engaging manner.
+    Ensure that the blog post is formatted correctly and includes relevant images and
+    links to other sources.
+    Ensure that the blog post is optimized for SEO and includes relevant keywords.
+    The length of the blog post needs to follow the following guidelines:
+    - How-To Guides: 1500 - 2500 words
+    - Listicles: 1000 - 1500 words
+    - News Articles: 500 - 1000 words
+    As a rule of thumb, in order to improve SEO and Search Rankings, blog posts need to 
+    be between 1500 and 2500 words.
   expected_output: >
-    A fully fledge reports with the mains topics, each with a full section of information.
-    Formatted as markdown without '```'
-  agent: reporting_analyst
+    A well-written blog post about {topic} that is engaging, informative, and easy to read.
+  agent: topic_writer
+
+topic_editing_task:
+  description: >
+    Edit the blog post about {topic} to ensure that it is accurate, engaging, and well-written.
+    Make sure that the blog post is free of grammatical errors and typos and that it flows
+    smoothly from one section to the next.
+    Ensure that the blog post is optimized for SEO and includes relevant keywords.
+    Make sure that the blog post is formatted correctly and includes relevant images and
+    links to other sources.
+    Ensure that the blog post is of the appropriate length for the type of content:
+    - How-To Guides: 1500 - 2500 words
+    - Listicles: 1000 - 1500 words
+    - News Articles: 500 - 1000 words
+    As a rule of thumb, in order to improve SEO and Search Rankings, blog posts need to
+    be between 1500 and 2500 words.
+    Verify that the content is a balance of NLP and humanized content at a rate of 60% NLP
+    and 40% humanized. Ensure that readers and AI detectors determine the content to be
+    written by a human.
+  expected_output: >
+    A well-edited blog post about {topic} that is accurate, engaging, and well-written.
+  agent: topic_editor
+
+topic_seo_task:
+  description: >
+    Optimize the blog post about {topic} to improve search engine rankings and drive traffic.
+    Make sure that the blog post includes relevant keywords and is optimized for SEO.
+    Ensure that the blog post is of the appropriate length for the type of content:
+    - How-To Guides: 1500 - 2500 words
+    - Listicles: 1000 - 1500 words
+    - News Articles: 500 - 1000 words
+    As a rule of thumb, in order to improve SEO and Search Rankings, blog posts need to
+    be between 1500 and 2500 words.
+    Verify that the content is a balance of NLP and humanized content at a rate of 60% NLP
+    and 40% humanized. Ensure that readers and AI detectors determine the content to be
+    written by a human.
+  expected_output: >
+    A well-optimized blog post about {topic} that improves search engine rankings and drives traffic.
+  agent: topic_seo_specialist
+
+topic_publishing_task:
+  description: >
+    Publish the blog post about {topic} as a markdown file in the 'output' directory.
+    Make the filename of the blog post as a slugified version of the title.
+    Make sure that the blog post is formatted correctly and includes relevant images and
+    links to other sources.
+    Ensure that the blog post is of the appropriate length for the type of content:
+    - How-To Guides: 1500 - 2500 words
+    - Listicles: 1000 - 1500 words
+    - News Articles: 500 - 1000 words
+    As a rule of thumb, in order to improve SEO and Search Rankings, blog posts need to
+    be between 1500 and 2500 words.
+    Verify that the content is a balance of NLP and humanized content at a rate of 60% NLP
+    and 40% humanized. Ensure that readers and AI detectors determine the content to be
+    written by a human.
+  expected_output: >
+    A published blog post about {topic} as a markdown file in the 'output' directory.
+  agent: topic_publisher

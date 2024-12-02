@@ -1,11 +1,7 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task, before_kickoff, after_kickoff
 
-# Uncomment the following line to use an example of a custom tool
-# from blogwriter.tools.custom_tool import MyCustomTool
-
-# Check our tools documentations for more information on how to use them
-# from crewai_tools import SerperDevTool
+from crewai_tools import WebsiteSearchTool
 
 @CrewBase
 class Blogwriter():
@@ -27,31 +23,74 @@ class Blogwriter():
 		return output
 
 	@agent
-	def researcher(self) -> Agent:
+	def topic_researcher(self)->Agent:
 		return Agent(
-			config=self.agents_config['researcher'],
-			# tools=[MyCustomTool()], # Example of custom tool, loaded on the beginning of file
-			verbose=True
+			config=self.agents_config["topic_researcher"],
+			verbose=True,
+			allow_delegation=True,
+			tools=[WebsiteSearchTool()],
 		)
 
 	@agent
-	def reporting_analyst(self) -> Agent:
+	def topic_writer(self)->Agent:
 		return Agent(
-			config=self.agents_config['reporting_analyst'],
-			verbose=True
+			config=self.agents_config["topic_writer"],
+			verbose=True,
+			allow_delegation=True,
+		)
+
+	@agent
+	def topic_editor(self)->Agent:
+		return Agent(
+			config=self.agents_config["topic_editor"],
+			verbose=True,
+			allow_delegation=True,
+		)
+
+	@agent
+	def topic_seo_specialist(self)->Agent:
+		return Agent(
+			config=self.agents_config["topic_seo_specialist"],
+			verbose=True,
+			allow_delegation=True,
+		)
+
+	@agent
+	def topic_publisher(self)->Agent:
+		return Agent(
+			config=self.agents_config["topic_publisher"],
+			verbose=True,
+			allow_delegation=True,
 		)
 
 	@task
-	def research_task(self) -> Task:
+	def topic_research_task(self, inputs) -> Task:
 		return Task(
-			config=self.tasks_config['research_task'],
+			config=self.tasks_config["topic_research_task"],
 		)
 
 	@task
-	def reporting_task(self) -> Task:
+	def topic_writing_task(self,inputs)->Task:
 		return Task(
-			config=self.tasks_config['reporting_task'],
-			output_file='report.md'
+			config=self.tasks_config["topic_writing_task"],
+		)
+
+	@task
+	def topic_editing_task(self,inputs)->Task:
+		return Task(
+			config=self.tasks_config["topic_editing_task"],
+		)
+
+	@task
+	def topic_seo_task(self,inputs)->Task:
+		return Task(
+			config=self.tasks_config["topic_seo_task"],
+		)
+
+	@task
+	def topic_publishing_task(self,inputs)->Task:
+		return Task(
+			config=self.tasks_config["topic_publishing_task"],
 		)
 
 	@crew
