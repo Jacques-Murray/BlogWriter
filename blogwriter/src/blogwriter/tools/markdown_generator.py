@@ -6,6 +6,7 @@ from pydantic import BaseModel, Field
 class MarkdownGeneratorInput(BaseModel):
     """Input schema for MarkdownGenerator."""
     title: str = Field(..., description="Title of the blog post.")
+    date: str = Field(..., description="Date of the blog post.")
     content: str = Field(..., description="Content of the blog post.")
     filename: str = Field(..., description="Name of the file to save the blog post.")
 

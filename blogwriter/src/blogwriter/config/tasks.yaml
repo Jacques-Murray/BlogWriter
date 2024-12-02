@@ -80,4 +80,9 @@ topic_publishing_task:
     written by a human.
   expected_output: >
     A published blog post about {topic} as a markdown file in the 'output' directory.
+    The following parameters need to be sent to the markdown_generator tool:
+      - title: str = Field(..., description="Title of the blog post.")
+      - date: str = Field(..., description="Date of the blog post.")
+      - content: str = Field(..., description="Content of the blog post.")
+      - filename: str = Field(..., description="Name of the file to save the blog post.")
   agent: topic_publisher

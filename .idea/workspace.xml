@@ -4,17 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec8d2cfc-d567-40a7-affd-3ed5f619c87a" name="Changes" comment="Ask for topic input from user during crew run.">
+    <list default="true" id="ec8d2cfc-d567-40a7-affd-3ed5f619c87a" name="Changes" comment="Add markdown_generator.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogwriter/src/blogwriter/config/agents.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/blogwriter/src/blogwriter/config/agents.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blogwriter/src/blogwriter/config/tasks.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/blogwriter/src/blogwriter/config/tasks.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blogwriter/src/blogwriter/crew.py" beforeDir="false" afterPath="$PROJECT_DIR$/blogwriter/src/blogwriter/crew.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogwriter/src/blogwriter/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/blogwriter/src/blogwriter/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogwriter/src/blogwriter/tools/markdown_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/blogwriter/src/blogwriter/tools/markdown_generator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -23,7 +29,9 @@
   "associatedIndex": 6
 }]]></component>
   <component name="ProjectId" id="2pezu7c2oeFBiQn6jdMq8BJWj1Z" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -75,12 +83,30 @@
       <option name="project" value="LOCAL" />
       <updated>1733142221150</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Complete agents, tasks, main and crew configuration.">
+      <option name="closed" value="true" />
+      <created>1733144057132</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1733144057132</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add markdown_generator.py">
+      <option name="closed" value="true" />
+      <created>1733148332670</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1733148332670</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit." />
     <MESSAGE value="Ask for topic input from user during crew run." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ask for topic input from user during crew run." />
+    <MESSAGE value="Complete agents, tasks, main and crew configuration." />
+    <MESSAGE value="Add markdown_generator.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add markdown_generator.py" />
   </component>
 </project>

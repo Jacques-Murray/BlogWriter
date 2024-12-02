@@ -1,7 +1,10 @@
+import os
+
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task, before_kickoff, after_kickoff
 
 from crewai_tools import WebsiteSearchTool
+from langchain_community.tools import BraveSearch, DuckDuckGoSearchRun
 from .tools.markdown_generator import MarkdownGenerator
 
 
@@ -13,6 +16,9 @@ class Blogwriter():
     tasks_config = 'config/tasks.yaml'
 
     markdown_generator = MarkdownGenerator()
+    brave_search = BraveSearch.from_api_key(os.getenv("BRAVE_SEARCH_API_KEY"))
+    duckduckgo_search = DuckDuckGoSearchRun()
+    website_search_tool = WebsiteSearchTool()
 
     @before_kickoff  # Optional hook to be executed before the crew starts
     def pull_data_example(self, inputs):
@@ -31,7 +37,7 @@ class Blogwriter():
         return Agent(
             config=self.agents_config["topic_researcher"],
             verbose=True,
-            tools=[WebsiteSearchTool()],
+            tools=[self.website_search_tool, self.brave_search, self.duckduckgo_search],
             max_iter=5
         )
 
